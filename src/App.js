@@ -1,25 +1,19 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { connect } from "./state/useGlobal";
+import DarkMode from "./components/DarkMode";
+import AppLayout from "./layouts/AppLayout";
+import DarkModeClass from "./components/DarkModeOld";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <AppLayout>
+      <div className="px-6 py-32 mx-auto text-center max-w-7xl sm:py-40 lg:px-8">
+        <p className="text-base font-semibold leading-8 text-white">
+          Touch me 👇
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <DarkMode />
+        <DarkModeClass />
+      </div>
+    </AppLayout>
   );
 }
 

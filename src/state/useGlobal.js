@@ -11,7 +11,7 @@ const actions = {
   setDarkMode,
 };
 
-const useGlobal = globalHook(React, initialState, actions);
+const useGlobal = globalHook(initialState, actions);
 export const connect = (Component) => {
   return (props) => {
     let [globalState, globalActions] = useGlobal();
