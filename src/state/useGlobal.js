@@ -1,5 +1,5 @@
 import React from "react";
-import globalHook from "use-global-hook";
+import globalHook from "./useGlobalHook";
 
 import { initialState as darkMode, setDarkMode } from "./darkMode";
 
@@ -11,7 +11,7 @@ const actions = {
   setDarkMode,
 };
 
-const useGlobal = globalHook(initialState, actions);
+const useGlobal = globalHook(React, initialState, actions);
 export const connect = (Component) => {
   return (props) => {
     let [globalState, globalActions] = useGlobal();
